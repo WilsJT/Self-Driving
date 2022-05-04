@@ -5,7 +5,7 @@ This project attempts to create a self driving model in the track racing game, "
 ## Variables
 <ul>
   <li>Distances: How far away is the car to the walls</li>
-  <li>Speed: How fast is the car moving/li>
+  <li>Speed: How fast is the car moving</li>
  </ul>
 
 ## Screen Capture
