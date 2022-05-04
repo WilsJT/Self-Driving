@@ -10,7 +10,7 @@ This project attempts to create a self driving model in the track racing game, "
 
 ## Screen Capture
 
-Vision is an important sense that we tend to rely on, not just in driving, but throughout our daily lives. Our visual system is constantly working to collect and provide information about the environment. Computer vision is a field of study that tries to enable computers to just this. So, to begin, I need a way to capture the screen before I can begin collecting data. 
+Vision is an important sense that we tend to rely on, not just in driving, but throughout our daily lives. Our visual system is constantly working to collect and provide information about the environment. Computer vision is a field of study that tries to enable computers to do just that. So, to begin, I need a way to capture the screen before I can begin collecting data. 
 
 ## Region of Interest
 
