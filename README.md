@@ -42,8 +42,6 @@ The angles I chose to use (in degrees) were 30, 45, 60, 90, 120, 135, and 150. I
 
 ![template](https://user-images.githubusercontent.com/69861524/166853656-3ef664b1-1c96-4dca-b68d-29fa1a09b9b2.jpg)
 
-An issue with the method above is that I would need to find a way to determine which points correspond to which angle. Another method I came up with was to create individual templates, each corresponding to a single angle. That way, I could find the points and their corresponding angles. This method was too slow in testing since it required multiple masking operations.
-
 ## Computing Distances
 
 As mentioned in the template section, I need a way to determine which points correspond to which angle. Using the equation for a line, y=mx+b, I can determine if a point is along an angle. Knowing which point corresponds to which angle makes it easy to determine the closest point for each angle and their distances.
@@ -69,5 +67,9 @@ As mentioned in the template section, I need a way to determine which points cor
 #### Hough Line Transform 
 
 The lines from the Hough Line transform could be better, but because I'm only taking the closest point along an angle, the results shouldn't be affected by the noise coming from the background. It would be possible to skip the Hough Line transform entirely and only use Canny by removing text on the road. This would likely speed up the process and allow for higher frames per second, but I believe this would make the model less generalizable since different tracks would likely have writing on the ground as well. Defining a better region of interest would also be difficult since masking over an area on the image to get rid of the text could affect other aspects of edge detection. For example, if an edge crosses over the masked area, it's possible that the edge would not be detected.
+
+#### Template
+
+An issue with the method I used above is that I would need to find a way to determine which points correspond to which angle. Another method I came up with was to create individual templates, each corresponding to a single angle. That way, I could find the points and their corresponding angles. This method was too slow in testing since it required multiple masking operations.
 
 #### Work in Progress
