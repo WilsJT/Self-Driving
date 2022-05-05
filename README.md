@@ -12,21 +12,29 @@ This project attempts to create a self driving model in the track racing game, "
 
 Vision is an important sense that we tend to rely on, not just in driving, but throughout our daily lives. Our visual system is constantly working to collect and provide information about the environment. Computer vision is a field of study that tries to enable computers to do just that. So, to begin, I need a way to capture the screen before I can begin collecting data.
 
+![screen](https://user-images.githubusercontent.com/69861524/166872081-b76797fe-538b-4633-8e99-8470a535d271.jpg)
+
 ## Speed
 
 Getting the speed simply involves another screen capture then using pytesseract to convert the image to a number.
 
 ## Region of Interest
 
-When capturing the screen, there's a lot information coming in from the background that won't be needed in this project. I can capture the screen only in the area I'm interested in by defining a region of interest. By getting rid of the unhelpful information, it will help speed up the distance calculations later.
+When capturing the screen, there's a lot information coming in from the background that won't be needed in this project. I can capture the screen only in the area I'm interested in by defining a region of interest. By getting rid of the unhelpful information, it will help speed up data collection.
 
-#### Currently testing with different regions of interest
+![roi](https://user-images.githubusercontent.com/69861524/166872097-fbc1905e-fa95-4e52-ab85-3c30e5db15d0.jpg)
 
 ## Edge Detection
 
 I'm interested in how for away the car is to the walls so in order to get the distance, I need to detect where the walls are.
 
-#### Currently testing with different edge detections
+Canny w/ Gaussian Blur
+
+![edges](https://user-images.githubusercontent.com/69861524/166867758-c27b215f-5376-42c9-b3ec-3c0a5bb06a17.jpg)
+
+Hough Line Transform 
+
+![lane](https://user-images.githubusercontent.com/69861524/166867765-03af7614-7c8f-4587-813b-f314e87261ec.jpg)
 
 ## Template
 
@@ -40,10 +48,26 @@ An issue with the method above is that I would need to find a way to determine w
 
 As mentioned in the template section, I need a way to determine which points correspond to which angle. Using the equation for a line, y=mx+b, I can determine if a point is along an angle. Knowing which point corresponds to which angle makes it easy to determine the closest point for each angle and their distances.
 
+![pixels](https://user-images.githubusercontent.com/69861524/166868477-d427646d-c530-45e6-901e-ada3c3ef46e0.jpg)
+
+![dist](https://user-images.githubusercontent.com/69861524/166868488-2f7e2499-33f9-47b5-8b98-458e33a504e9.jpg)
+
 ## Collecting Data
+
+#### Work in Progress
 
 ## Creating and Testing Models
 
+#### Work in Progress
+
 ## Results
 
+#### Work in Progress
+
 ## Issues/Discussion
+
+#### Hough Line Transform 
+
+The lines from the Hough Line transform could be better, but because I'm only taking the closest point along an angle, the results shouldn't be affected by the noise coming from the background. It would be possible to skip the Hough Line transform entirely and only use Canny by removing text on the road. This would likely speed up the process and allow for higher frames per second, but I believe this would make the model less generalizable since different tracks would likely have writing on the ground as well. Defining a better region of interest would also be difficult since masking over an area on the image to get rid of the text could affect other aspects of edge detection. For example, if an edge crosses over the masked area, it's possible that the edge would not be detected.
+
+#### Work in Progress
