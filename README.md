@@ -10,7 +10,11 @@ This project attempts to create a self driving model in the track racing game, "
 
 ## Screen Capture
 
-Vision is an important sense that we tend to rely on, not just in driving, but throughout our daily lives. Our visual system is constantly working to collect and provide information about the environment. Computer vision is a field of study that tries to enable computers to do just that. So, to begin, I need a way to capture the screen before I can begin collecting data. 
+Vision is an important sense that we tend to rely on, not just in driving, but throughout our daily lives. Our visual system is constantly working to collect and provide information about the environment. Computer vision is a field of study that tries to enable computers to do just that. So, to begin, I need a way to capture the screen before I can begin collecting data.
+
+## Speed
+
+Getting the speed simply involves another screen capture then using pytesseract to convert the image to a number.
 
 ## Region of Interest
 
@@ -34,11 +38,7 @@ An issue with the method above is that I would need to find a way to determine w
 
 ## Computing Distances
 
-As mentioned in the template section, we need a way to determine which points correspond to which angle. Using the equation for a line, y=mx+b, we can determine if a point is along an angle.
-
-
-
-## Speed
+As mentioned in the template section, I need a way to determine which points correspond to which angle. Using the equation for a line, y=mx+b, I can determine if a point is along an angle. Knowing which point corresponds to which angle makes it easy to determine the closest point for each angle and their distances.
 
 ## Collecting Data
 
