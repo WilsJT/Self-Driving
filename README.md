@@ -70,6 +70,6 @@ The lines from the Hough Line transform could be better, but because I'm only ta
 
 #### Template
 
-An issue with the method I used above is that I would need to find a way to determine which points correspond to which angle. Another method I came up with was to create individual templates, each corresponding to a single angle. That way, I could find the points and their corresponding angles. This method was too slow in testing since it required multiple masking operations.
+An issue with the method I used above is that I would need to find a way to determine which points correspond to which angle. Another method I came up with was to create individual templates, each corresponding to their own angle. That way, I could find the points and their corresponding angles. This method was too slow in testing since it required multiple masking operations.
 
 #### Work in Progress
