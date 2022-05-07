@@ -18,6 +18,8 @@ Vision is an important sense that we tend to rely on, not just in driving, but t
 
 Getting the speed simply involves another screen capture then using pytesseract to convert the image to a number.
 
+#### Testing with tesserocr
+
 ## Region of Interest
 
 When capturing the screen, there's a lot information coming in from the background that won't be needed in this project. I can capture the screen only in the area I'm interested in by defining a region of interest. By getting rid of the unhelpful information, it will help speed up data collection.
