@@ -16,9 +16,11 @@ Vision is an important sense that we tend to rely on, not just in driving, but t
 
 ## Speed
 
-Getting the speed simply involves another screen capture then using pytesseract to convert the image to a number.
+Getting the speed simply involves another screen capture then using an image to text library to convert the image to a number 
 
-#### Testing with tesserocr
+Pytesseract and tesserocr are two potential libraries to convert the image to a number. When testing, tesserocr was roughly 3x faster but pytesseract was far more consistent. 
+
+#### Testing different capture methods
 
 ## Region of Interest
 
@@ -65,6 +67,8 @@ As mentioned in the template section, I need a way to determine which points cor
 #### Work in Progress
 
 ## Issues/Discussion
+
+#### Speed
 
 #### Hough Line Transform 
 
