@@ -36,9 +36,6 @@ Canny w/ Gaussian Blur
 
 ![edges](https://user-images.githubusercontent.com/69861524/166867758-c27b215f-5376-42c9-b3ec-3c0a5bb06a17.jpg)
 
-Hough Line Transform 
-
-![lane](https://user-images.githubusercontent.com/69861524/166867765-03af7614-7c8f-4587-813b-f314e87261ec.jpg)
 
 ## Template
 
@@ -70,12 +67,18 @@ As mentioned in the template section, I need a way to determine which points cor
 
 #### Speed
 
-#### Hough Line Transform 
+#### Input
 
-The lines from the Hough Line transform could be better, but because I'm only taking the closest point along an angle, the results shouldn't be affected by the noise coming from the background. It would be possible to skip the Hough Line transform entirely and only use Canny by removing text on the road. This would likely speed up the process and allow for higher frames per second, but I believe this would make the model less generalizable since different tracks would likely have writing on the ground as well. Defining a better region of interest would also be difficult since masking over an area on the image to get rid of the text could affect other aspects of edge detection. For example, if an edge crosses over the masked area, it's possible that the edge would not be detected.
+The model simulates keyboard inputs as opposed to controller inputs which makes the car drive in an unsmooth manner. This is because the data collected is also from keyboard. With controller settings, I would be able to record the amount of steering and assign these values as the labels. This would remove the need for labeling with K-means clustering. In addition to this, with controller simulation, the car would be able to drive in all directions and allow for smooth driving.
+
+#### Edge Detection
+
+Along with the walls, Canny also detected the text and images that's found at the start and end of every track. An ROI that covers slightly above the bottom of the screen would cover the text and image detections, but would also cover important edges later on in tracks, like the lanes. Using Hough Line transform solved this issue, but when comparing Hough Lines and Canny, there was less inconsistent pixel detections when using Hough Lines.
 
 #### Template
 
 An issue with the method I used above is that I would need to find a way to determine which points correspond to which angle. Another method I came up with was to create individual templates, each corresponding to their own angle. That way, I could find the points and their corresponding angles. This method was too slow in testing since it required multiple masking operations.
+
+In addition to this, the template only used 7 angles which may have hindered model performance. In the future, I plan to revisit this project and look at model performances with more angles.
 
 #### Work in Progress
