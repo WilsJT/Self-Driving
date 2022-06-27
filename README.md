@@ -65,9 +65,10 @@ Clusters in K-means were initialized using these color corrected images and the 
 
 ## Creating and Testing Models
 
-I looked at several models. KNNs, SVMs, RFs, Neural Nets, and an ensemble of Neural Nets. Results from hyperparameter and model selection showed that RFs had the highest testing accuracies, but when put into use, they were unable to navigate the tracks.
+I looked at several models. KNNs, SVMs, RFs, Neural Nets, and an ensemble of Neural Nets. Results from hyperparameter and model selection showed that RFs had the highest testing accuracies, but when put into use, they were unable to navigate the tracks. SVMs and KNNs were similarly unable to navigate the tracks.
 
 Neural Nets and the ensemble of Neural Nets testing accuracies were similar and slightly less than the RFs. The ensemble was formed using the top 3 performing Neural Nets from the results of hyperparameter selection. However, the ensemble track navigation was similar to that of the highest performing Neural Net. Therefore, the single Neural Net was chosen over the ensemble.
+
 
 Overall, Neural Nets had the best track navigation. 
 
