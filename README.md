@@ -104,10 +104,6 @@ Due to the over and understeering issues when simulating a keyboard, I programme
 
 Along with the walls, Canny also detects the text and images that's found at the start and end of every track. An ROI that covers the bottom of the screen would cover the text and image detections, but would also cover important edges later on in tracks, like the lanes. Using Hough Line transform solved this issue, but when comparing Hough Lines and Canny, there was less inconsistent pixel detections when using Hough Lines. Ultimately, only Canny was used since using Hough Lines still involves using Canny and only using Canny allows for faster capture rates.
 
-#### Testing
-
-Originally, the data consisted of missing speed values, therefore pipelines were used with simple imputer. However, later on the data points were removed entirely but simple imputer was still used in some models despite not doing anything. This would slow training down, but results would be the same. 
-
 #### Template
 
 An issue with the method I used above is that I would need to find a way to determine which points correspond to which angle. Another method I came up with was to create individual templates, each corresponding to their own angle. That way, I could find the points and their corresponding angles. This method was too slow in testing since it required multiple masking operations.
